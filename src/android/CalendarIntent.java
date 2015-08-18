@@ -40,6 +40,7 @@ public class CalendarIntent extends CordovaPlugin {
             JSONObject options = args.optJSONObject(0);
             String title = options.optString("title");
             String description = options.optString("description");
+            String location = options.optString("location");
             long beginTime = options.optLong("beginTime", this._calendar.getTimeInMillis());
             long endTime = options.optLong("endTime",this._calendar.getTimeInMillis());
 
@@ -48,6 +49,7 @@ public class CalendarIntent extends CordovaPlugin {
 			intent.putExtra("title", title);
 			intent.putExtra("description", description);
 			intent.putExtra("beginTime", beginTime);
+			intent.putExtra("eventLocation", location);
 			intent.putExtra("endTime", endTime);
 			
 			((CordovaActivity)this.cordova.getActivity()).startActivity(intent);
