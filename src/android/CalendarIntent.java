@@ -48,7 +48,7 @@ public class CalendarIntent extends CordovaPlugin {
 			intent.putExtra("title", title);
 			intent.putExtra("description", description);
 			intent.putExtra("beginTime", beginTime);
-			intent.putExtra("endTime", beginTime);
+			intent.putExtra("endTime", endTime);
 			
 			((CordovaActivity)this.cordova.getActivity()).startActivity(intent);
 			callbackContext.success(action);

@@ -1,0 +1,22 @@
+{
+  "name": "calendar-intent",
+  "version": "0.1.0",
+  "description": "Cordova plugin to open a create calendar event intent",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elliotstokes/calendar-intent.git"
+  },
+  "keywords": [
+    "cordova",
+    "calendar"
+  ],
+  "author": "Elliot Stokes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elliotstokes/calendar-intent/issues"
+  },
+  "homepage": "https://github.com/elliotstokes/calendar-intent#readme"
+}
