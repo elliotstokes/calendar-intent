@@ -1,7 +1,10 @@
 calendar-intent
 ===============
 
-Opens up an intent to create a calendar event
+Intents for Cordova integration with android calendar
+
+Will open a calendar up on a specific day or will open up the create event for a calendar.
+
 
 installation
 
@@ -9,6 +12,10 @@ To install run the following command
 
     $ cordova plugins add https://github.com/elliotstokes/calendar-intent
 
+
+
+Creating Events
+================
 
 To use
 
@@ -26,3 +33,15 @@ cordova.plugins.calendarIntent.createEvent({
 
 ```
 
+
+Opening up the Calendar
+========================
+
+To use
+```javascript
+	cordova.plugins.calendarIntent.openCalendar({
+		time: '1578787200000'
+	})
+    function(args) {console.log('success', args);},
+    function(args) {console.log('fail', args);});;
+```

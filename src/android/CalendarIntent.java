@@ -1,8 +1,12 @@
 package com.megaphone.cordova.calendar;
 
 import android.content.Context;
+import android.content.ContentUris;
 import android.content.Intent;
+
 import java.util.Calendar;
+import android.provider.CalendarContract;
+import android.net.Uri;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -17,7 +21,8 @@ import org.apache.cordova.CordovaInterface;
 
 public class CalendarIntent extends CordovaPlugin {
 
-	public static final String ACTION_CREATE_EVENT = "createEvent";
+	private static final String ACTION_CREATE_EVENT = "createEvent";
+	private static final String ACTION_SHOW_CALENDAR = "showCalendar";
 	
 	private Calendar _calendar;
 
@@ -54,6 +59,18 @@ public class CalendarIntent extends CordovaPlugin {
 			
 			((CordovaActivity)this.cordova.getActivity()).startActivity(intent);
 			callbackContext.success(action);
+		}
+
+		if (action.equals(ACTION_SHOW_CALENDAR)) {
+			JSONObject options = args.optJSONObject(0);
+			long time = options.optLong("time", this._calendar.getTimeInMillis());
+			Uri.Builder builder = CalendarContract.CONTENT_URI.buildUpon();   
+ 			builder.appendPath("time");
+ 			ContentUris.appendId(builder, time);
+ 			Intent intent = new Intent(Intent.ACTION_VIEW)
+     		.setData(builder.build());
+     		((CordovaActivity)this.cordova.getActivity()).startActivity(intent);
+   			callbackContext.success(action);
 		}
 
 		
