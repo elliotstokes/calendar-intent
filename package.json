@@ -1,6 +1,6 @@
 {
   "name": "calendar-intent",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Cordova plugin to open a create calendar event intent",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
